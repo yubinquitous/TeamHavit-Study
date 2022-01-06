@@ -11,22 +11,21 @@ class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
 //    var text = "TEST"
     val liveText = MutableLiveData<String>()
+    val liveVisible = MutableLiveData<Boolean>()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = DataBindingUtil.setContentView(this, R.layout.activity_main)
 
         binding.apply {
-            lifecycleOwner = this@MainActivity
-            activity = this@MainActivity
+            lifecycleOwner = this@MainActivity  // binding에 LifeCycleOwner를 지정해줘야 LiveData가 실시간으로 변함!
+            activity = this@MainActivity        // xml 파일에 선언한 activity
 
             btnChange.setOnClickListener {
-                if (liveText.value == "Hello DataBinding!")
-                    liveText.value = "Hello LiveData!"
-                else
-                    liveText.value = "Hello DataBinding!"
+                liveVisible.value = liveVisible.value != true
             }
         }
         liveText.value = "Hello DataBinding!"
+        liveVisible.value = true
     }
 }

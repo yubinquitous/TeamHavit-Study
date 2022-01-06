@@ -15,10 +15,13 @@
         tools:context=".MainActivity">
 
         <TextView
-            android:id="@+id/text_view"
+            android:id="@+id/tv_test"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@{activity.liveText}"
+            app:visible="@{activity.liveVisible}"
+            android:textSize="30sp"
+            android:textStyle="bold"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
@@ -29,11 +32,11 @@
             android:id="@+id/btn_change"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Change Text"
+            android:text="Change Visible"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/text_view" />
+            app:layout_constraintTop_toBottomOf="@id/tv_test" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
