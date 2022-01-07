@@ -1,6 +1,7 @@
 package com.example.havit.ui.home
 
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -28,6 +29,15 @@ class HomeFragment : Fragment() {
 
         _binding = FragmentHomeBinding.inflate(inflater, container, false)
 
+        binding.nsvMain.run {
+            header = binding.tvSearch
+            stickListener = { _ ->
+                Log.d("LOGGER_TAG", "stickListener")
+            }
+            freeListener = { _ ->
+                Log.d("LOGGER_TAG", "freeListener")
+            }
+        }
         return binding.root
     }
 
