@@ -28,7 +28,7 @@ class NewScrollView : ScrollView, ViewTreeObserver.OnGlobalLayoutListener {
                 it.setOnClickListener { _ ->
 //                클릭 시, 헤더뷰가 최상단으로 오게 스크롤 이동
                     this.smoothScrollTo(scrollX, it.top)    // 지정한 스크롤의 위치로 부드럽게 스크롤
-                    callStickListener()
+                    callStickyListener()
                 }
             }
         }
@@ -53,34 +53,20 @@ class NewScrollView : ScrollView, ViewTreeObserver.OnGlobalLayoutListener {
         // t가 헤더의 초기 y포지션보다 클 경우 헤더를 천장에 붙인다.
         // t : 스크롤 뷰가 스크롤된 정도
         if (t > mHeaderInitPosition) {
-            stickHeader(t - mHeaderInitPosition)
+            stickyHeader(t - mHeaderInitPosition)
         } else {
-            freeHeader()
+            stickyHeader(0f)
         }
     }
 
-    private fun stickHeader(position: Float) {
+    private fun stickyHeader(position: Float) {
         header?.translationY = position
-        callStickListener()
+        callStickyListener()
     }
 
-    private fun callStickListener() {
-        if (!mIsHeaderSticky) {
-            stickListener(header ?: return)
-            mIsHeaderSticky = true
-        }
-    }
-
-    private fun freeHeader() {
-        header?.translationY = 0f
-        callFreeListener()
-    }
-
-    private fun callFreeListener() {
-        if (mIsHeaderSticky) {
-            freeListener(header ?: return)
-            mIsHeaderSticky = false
-        }
+    private fun callStickyListener() {
+        mIsHeaderSticky = !mIsHeaderSticky
+        stickListener(header ?: return)
     }
 
     override fun onDetachedFromWindow() {
