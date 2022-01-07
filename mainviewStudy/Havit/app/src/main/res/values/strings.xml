@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">havit</string>
+    <string name="title_home">Home</string>
+    <string name="title_dashboard">Dashboard</string>
+    <string name="title_notifications">Notifications</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <string name="kakao_app_key">6069fb41c205cbbf8f213b32eec7f2c8</string>
+</resources>
