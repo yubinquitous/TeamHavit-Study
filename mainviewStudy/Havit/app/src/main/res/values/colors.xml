@@ -7,4 +7,7 @@
     <color name="teal_700">#FF018786</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+
+    <color name="haivt_purple">#8578FF</color>
+    <color name="havit_purple_light">#D6D5FF</color>
 </resources>
