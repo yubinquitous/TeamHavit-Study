@@ -85,5 +85,5 @@ dependencies {
     kapt 'com.github.bumptech.glide:compiler:4.12.0'
 
     // Indicator
-    implementation 'com.tbuonomo:dotsindicator:4.2'
+    implementation 'com.kingfisherphuoc:easy-recyclerview-indicator:1.3'
 }
