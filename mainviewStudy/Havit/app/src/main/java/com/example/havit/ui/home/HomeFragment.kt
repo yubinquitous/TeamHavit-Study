@@ -8,6 +8,7 @@ import android.view.ViewGroup
 import androidx.browser.customtabs.CustomTabsIntent
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
+import com.example.havit.R
 import com.example.havit.databinding.FragmentHomeBinding
 
 
@@ -29,6 +30,22 @@ class HomeFragment : Fragment() {
 
         _binding = FragmentHomeBinding.inflate(inflater, container, false)
 
+        initSearchScroll()
+        initHomeCategoryFragment()
+
+        return binding.root
+    }
+
+    private fun initHomeCategoryFragment() {
+        val fragment1 = HomeCategoryFragment()
+//        val fragment2 = HomeCateforyEmptyFragment()
+
+        childFragmentManager.beginTransaction()
+            .add(R.id.fcv_category, fragment1)
+            .commit()
+    }
+
+    private fun initSearchScroll() {
         binding.nsvMain.run {
             header = binding.tvSearch
             stickListener = { _ ->
@@ -38,10 +55,7 @@ class HomeFragment : Fragment() {
                 Log.d("LOGGER_TAG", "freeListener")
             }
         }
-        return binding.root
     }
-
-
 
     override fun onDestroyView() {
         super.onDestroyView()

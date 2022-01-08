@@ -7,4 +7,7 @@
     <string name="hello_blank_fragment">Hello blank fragment</string>
 
     <string name="kakao_app_key">6069fb41c205cbbf8f213b32eec7f2c8</string>
+
+<!--  fragment_home_category  -->
+    <string name="home_category_sub">저장 콘텐츠</string>
 </resources>
