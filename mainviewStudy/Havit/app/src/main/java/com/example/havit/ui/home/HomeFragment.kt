@@ -32,16 +32,26 @@ class HomeFragment : Fragment() {
 
         initSearchScroll()
         initHomeCategoryFragment()
+        initHomeContentsFragment()
 
         return binding.root
     }
 
-    private fun initHomeCategoryFragment() {
-        val fragment1 = HomeCategoryFragment()
-//        val fragment2 = HomeCateforyEmptyFragment()
+    private fun initHomeContentsFragment() {
+        val fragmentContents = HomeContentsFragment()
+//        val fragmentContentsEmpty = HomeContentsEmptyFragment()
 
         childFragmentManager.beginTransaction()
-            .add(R.id.fcv_category, fragment1)
+            .add(R.id.fcv_recent_contents, fragmentContents)
+            .commit()
+    }
+
+    private fun initHomeCategoryFragment() {
+        val fragmentCategory = HomeCategoryFragment()
+//        val fragmentCateforyEmpty = HomeCateforyEmptyFragment()
+
+        childFragmentManager.beginTransaction()
+            .add(R.id.fcv_category, fragmentCategory)
             .commit()
     }
 

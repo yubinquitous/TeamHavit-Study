@@ -13,6 +13,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
+        app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
         tools:itemCount="6"
         app:spanCount="2"
         tools:listitem="@layout/item_home_category_list" />
@@ -24,8 +25,8 @@
         android:layout_marginTop="10dp"
         android:gravity="center"
         app:avi_animation_enable="false"
-        app:avi_drawable="@drawable/blue_radius"
-        app:avi_drawable_unselected="@drawable/gray_radius"
+        app:avi_drawable="@drawable/bg_home_category_indicator_selected"
+        app:avi_drawable_unselected="@drawable/bg_home_category_indicator_unselected"
         app:avi_height="10dp"
         app:avi_margin="10dp"
         app:avi_orientation="horizontal"
