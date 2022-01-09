@@ -1,5 +1,6 @@
 package com.example.havit.ui.home
 
+import android.graphics.drawable.GradientDrawable
 import androidx.lifecycle.ViewModelProvider
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -8,6 +9,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.example.havit.R
 import com.example.havit.databinding.FragmentHomeContentsBinding
 
 class HomeContentsFragment : Fragment() {

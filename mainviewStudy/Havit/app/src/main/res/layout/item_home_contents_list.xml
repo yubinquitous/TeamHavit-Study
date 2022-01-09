@@ -10,7 +10,7 @@
         android:id="@+id/iv_contents"
         android:layout_width="match_parent"
         android:layout_height="82dp"
-        android:background="@color/gray_1"
+        android:background="@drawable/bg_home_contents_img_radius_6"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"/>
 

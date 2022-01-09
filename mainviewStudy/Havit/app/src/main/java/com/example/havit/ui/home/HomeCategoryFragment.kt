@@ -2,6 +2,7 @@ package com.example.havit.ui.home
 
 import androidx.lifecycle.ViewModelProvider
 import android.os.Bundle
+import android.util.DisplayMetrics
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -30,9 +31,16 @@ class HomeCategoryFragment : Fragment() {
         homeCategoryViewModel = ViewModelProvider(this).get(HomeCategoryViewModel::class.java)
         _binding = FragmentHomeCategoryBinding.inflate(inflater, container, false)
 
+        initItemWidth()
         initAdapter()
         initIndicator()
         return binding.root
+    }
+
+    private fun initItemWidth() {
+        val metrics = DisplayMetrics()
+
+
     }
 
     private fun initIndicator() {
@@ -40,10 +48,12 @@ class HomeCategoryFragment : Fragment() {
 
         gridIndicator.setItemCount(categoryAdapter.itemCount / 6 + 1)   // 전체 카테고리 수 / 6 + 1
         gridIndicator.setCurrentPosition(0)
+
         binding.rvCategory.layoutManager =
             GridLayoutManager(context, 3, RecyclerView.HORIZONTAL, false)
-        val gridLayoutSnapHelper = GridLayoutSnapHelper(2)
-        gridLayoutSnapHelper.attachToRecyclerView(binding.rvCategory)
+
+//        val gridLayoutSnapHelper = GridLayoutSnapHelper(6)
+//        gridLayoutSnapHelper.attachToRecyclerView(binding.rvCategory)
 
         val onScrollListener = object : RecyclerView.OnScrollListener() {
             override fun onScrollStateChanged(recyclerView: RecyclerView, newState: Int) {
@@ -71,7 +81,18 @@ class HomeCategoryFragment : Fragment() {
                 HomeCategoryData("UX/UI 아티클4", 28),
                 HomeCategoryData("UX/UI 아티클5", 28),
                 HomeCategoryData("UX/UI 아티클6", 28),
-                HomeCategoryData("UX/UI 아티클7", 28)
+                HomeCategoryData("UX/UI 아티클7", 28),
+                HomeCategoryData("UX/UI 아티클8", 28),
+                HomeCategoryData("UX/UI 아티클9", 28),
+                HomeCategoryData("UX/UI 아티클10", 28),
+                HomeCategoryData("UX/UI 아티클11", 28),
+                HomeCategoryData("UX/UI 아티클12", 28),
+                HomeCategoryData("UX/UI 아티클13", 28),
+                HomeCategoryData("UX/UI 아티클14", 28),
+                HomeCategoryData("UX/UI 아티클15", 28),
+                HomeCategoryData("UX/UI 아티클16", 28),
+                HomeCategoryData("UX/UI 아티클17", 28),
+
             )
         )
         categoryAdapter.notifyDataSetChanged()
