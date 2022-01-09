@@ -7,7 +7,7 @@ import com.example.havit.databinding.ItemHomeCategoryListBinding
 import com.example.havit.databinding.ItemHomeContentsListBinding
 
 class HomeContentsAdapter : RecyclerView.Adapter<HomeContentsAdapter.HomeContentsViewHolder>(){
-    val contentsList = mutableListOf<HomeContentsData>()
+    var contentsList = mutableListOf<HomeContentsData>()
 
     override fun onCreateViewHolder(
         parent: ViewGroup,
@@ -19,6 +19,10 @@ class HomeContentsAdapter : RecyclerView.Adapter<HomeContentsAdapter.HomeContent
         )
 
         return HomeContentsViewHolder(binding)
+    }
+
+    fun setList(list :List<HomeContentsData>){
+        contentsList= list as MutableList<HomeContentsData>
     }
 
     override fun onBindViewHolder(
@@ -33,9 +37,10 @@ class HomeContentsAdapter : RecyclerView.Adapter<HomeContentsAdapter.HomeContent
     class HomeContentsViewHolder(private val binding: ItemHomeContentsListBinding)
         : RecyclerView.ViewHolder(binding.root) {
         fun onBind(data : HomeContentsData) {
-            binding.tvTitle.text = data.title
-            binding.tvHeader.text = data.header
-            binding.tvTime.text = data.time
+            binding.contentsData = data
+//            binding.tvTitle.text = data.title
+//            binding.tvHeader.text = data.header
+//            binding.tvTime.text = data.time
         }
     }
 }

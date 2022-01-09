@@ -9,16 +9,24 @@ import androidx.databinding.DataBindingUtil
 import androidx.databinding.ViewDataBinding
 import androidx.fragment.app.Fragment
 
-abstract class BaseBindingFragment <B : ViewDataBinding>(@LayoutRes private val layoutRes: Int):Fragment(){
-    private lateinit var binding:B
+abstract class BaseBindingFragment<B : ViewDataBinding>(@LayoutRes private val layoutRes: Int) :
+    Fragment() {
+
+    private var _binding : B? = null
+    val binding get() = _binding ?: error("View를 참조하기 위해 binding이 초기화되지 않았습니다.")
+
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        binding = DataBindingUtil.inflate<B>(inflater,layoutRes,container,false).apply {
-            lifecycleOwner=viewLifecycleOwner
-        }
+        _binding = DataBindingUtil.inflate(inflater, layoutRes, container, false)
+        binding.lifecycleOwner = viewLifecycleOwner
         return binding.root
+    }
+
+    override fun onDestroyView() {
+        super.onDestroyView()
+        _binding = null
     }
 }
