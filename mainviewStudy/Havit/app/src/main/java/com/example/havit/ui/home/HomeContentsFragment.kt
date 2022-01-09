@@ -32,7 +32,6 @@ class HomeContentsFragment : Fragment() {
     private fun initAdapter() {
         contentsAdapter = HomeContentsAdapter()
         binding.rvContents.adapter = contentsAdapter
-
         homeContentsViewModel.requestContentsTaken()
 
         //        addAll(it)과 HomeContentsAdapter.kt에서의 setList() 함수가 같은 기능을 하나?-?

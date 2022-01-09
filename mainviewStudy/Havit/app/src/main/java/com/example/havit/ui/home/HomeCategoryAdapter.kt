@@ -1,17 +1,21 @@
 package com.example.havit.ui.home
 
+import android.graphics.drawable.Drawable
 import android.view.LayoutInflater
+import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import com.example.havit.R
 import com.example.havit.databinding.ItemHomeCategoryListBinding
 
 class HomeCategoryAdapter : RecyclerView.Adapter<HomeCategoryAdapter.HomeCategoryViewHolder>() {
     val categoryList = mutableListOf<HomeCategoryData>()
+    private var callbackChangeBackground: Drawable? = null
 
     override fun onCreateViewHolder(
         parent: ViewGroup,
         viewType: Int
-    ): HomeCategoryAdapter.HomeCategoryViewHolder {
+    ): HomeCategoryViewHolder {
         val binding = ItemHomeCategoryListBinding.inflate(
             LayoutInflater.from(parent.context),
             parent, false
@@ -21,10 +25,17 @@ class HomeCategoryAdapter : RecyclerView.Adapter<HomeCategoryAdapter.HomeCategor
     }
 
     override fun onBindViewHolder(
-        holder: HomeCategoryAdapter.HomeCategoryViewHolder,
+        holder: HomeCategoryViewHolder,
         position: Int
     ) {
         holder.onBind(categoryList[position])
+
+        if (position == 0)
+            holder.itemView.background = callbackChangeBackground
+    }
+
+    fun setCallbackChangeItemBackground(drawable: Drawable?) {
+        callbackChangeBackground = drawable
     }
 
     override fun getItemCount(): Int = categoryList.size

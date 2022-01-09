@@ -10,6 +10,7 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.example.havit.R
 import com.example.havit.databinding.FragmentHomeCategoryBinding
 import kotlin.math.ceil
 
@@ -28,17 +29,18 @@ class HomeCategoryFragment : Fragment() {
         homeCategoryViewModel = ViewModelProvider(this).get(HomeCategoryViewModel::class.java)
         _binding = FragmentHomeCategoryBinding.inflate(inflater, container, false)
 
-        initItemWidth()
+//        initItemWidth()
         initAdapter()
         initIndicator()
         return binding.root
     }
 
-    private fun initItemWidth() {
-        val metrics = DisplayMetrics()
-
-
-    }
+//    // recyclerview item 넓이 지정
+//    private fun initItemWidth() {
+//        val metrics = DisplayMetrics()
+//
+//
+//    }
 
     private fun initIndicator() {
         val gridIndicator = binding.anyViewIndicator2
@@ -68,7 +70,10 @@ class HomeCategoryFragment : Fragment() {
     }
 
     private fun initAdapter() {
+        val background = requireContext().getDrawable(R.drawable.aos_main_card_category_all_img)
         categoryAdapter = HomeCategoryAdapter()
+        categoryAdapter.setCallbackChangeItemBackground(background)
+
         binding.rvCategory.adapter = categoryAdapter
         categoryAdapter.categoryList.addAll(
             listOf(
