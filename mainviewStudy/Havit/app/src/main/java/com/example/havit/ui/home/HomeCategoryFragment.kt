@@ -6,6 +6,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.databinding.adapters.LinearLayoutBindingAdapter
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -40,9 +41,8 @@ class HomeCategoryFragment : Fragment() {
         gridIndicator.setItemCount(categoryAdapter.itemCount / 6 + 1)   // 전체 카테고리 수 / 6 + 1
         gridIndicator.setCurrentPosition(0)
         binding.rvCategory.layoutManager =
-            GridLayoutManager(context, 2, RecyclerView.HORIZONTAL, false)
-//        initAdapter()
-        val gridLayoutSnapHelper = GridLayoutSnapHelper(6)
+            GridLayoutManager(context, 3, RecyclerView.HORIZONTAL, false)
+        val gridLayoutSnapHelper = GridLayoutSnapHelper(2)
         gridLayoutSnapHelper.attachToRecyclerView(binding.rvCategory)
 
         val onScrollListener = object : RecyclerView.OnScrollListener() {
