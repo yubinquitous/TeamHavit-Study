@@ -1,13 +1,8 @@
 package com.example.havit.ui.home
 
-import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import androidx.lifecycle.viewModelScope
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.launch
-import retrofit2.HttpException
 
 class HomeContentsViewModel : ViewModel() {
 
@@ -25,8 +20,8 @@ class HomeContentsViewModel : ViewModel() {
             HomeContentsData("카테고리 이름7", "헤더입니다 헤더입니다 헤더입니다 헤더임", "2021.11.24"),
             HomeContentsData("카테고리 이름8", "헤더입니다 헤더입니다 헤더입니다 헤더임", "2021.11.24")
         )
-        Log.d("homecontentsvm try", "homecontentsvm try")
-        _contentsList.value=list
+        _contentsList.value = list
+
 //        viewModelScope.launch(Dispatchers.IO) {
 //            try {
 //                // 더미데이터

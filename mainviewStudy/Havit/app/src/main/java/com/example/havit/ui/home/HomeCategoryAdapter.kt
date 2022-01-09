@@ -29,11 +29,11 @@ class HomeCategoryAdapter : RecyclerView.Adapter<HomeCategoryAdapter.HomeCategor
 
     override fun getItemCount(): Int = categoryList.size
 
-    class HomeCategoryViewHolder(private val binding: ItemHomeCategoryListBinding)
-        : RecyclerView.ViewHolder(binding.root) {
-            fun onBind(data : HomeCategoryData) {
-                binding.tvTitle.text = data.title
-                binding.tvCount.text = data.count.toString()
-            }
+    class HomeCategoryViewHolder(private val binding: ItemHomeCategoryListBinding) :
+        RecyclerView.ViewHolder(binding.root) {
+        fun onBind(data: HomeCategoryData) {
+            binding.tvTitle.text = data.title
+            binding.tvCount.text = data.count.toString()
         }
+    }
 }

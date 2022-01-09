@@ -1,19 +1,16 @@
 package com.example.havit.ui.home
 
-import androidx.lifecycle.ViewModelProvider
 import android.os.Bundle
 import android.util.DisplayMetrics
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.databinding.adapters.LinearLayoutBindingAdapter
+import androidx.fragment.app.Fragment
+import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.havit.databinding.FragmentHomeCategoryBinding
-import com.kingfisher.easyviewindicator.AnyViewIndicator
-import com.kingfisher.easyviewindicator.GridLayoutSnapHelper
 import kotlin.math.ceil
 
 class HomeCategoryFragment : Fragment() {
@@ -93,7 +90,7 @@ class HomeCategoryFragment : Fragment() {
                 HomeCategoryData("UX/UI 아티클16", 28),
                 HomeCategoryData("UX/UI 아티클17", 28),
 
-            )
+                )
         )
         categoryAdapter.notifyDataSetChanged()
     }
