@@ -29,16 +29,14 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
-            <TextView
-                android:id="@+id/tv_reach"
+            <ProgressBar
+                android:id="@+id/pb_reach"
+                style="@android:style/Widget.ProgressBar.Horizontal"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
-                android:layout_marginBottom="25dp"
-                android:gravity="center"
-                android:padding="20sp"
-                android:text="도달률"
-                android:textSize="20sp"
+                android:layout_height="5dp"
+                android:layout_marginTop="100dp"
+                android:progressDrawable="@drawable/bg_home_progressbar"
+                android:max="100"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
@@ -54,13 +52,14 @@
                 android:textSize="20sp"
                 android:textStyle="bold"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/tv_reach" />
+                app:layout_constraintTop_toBottomOf="@id/pb_reach" />
 
             <androidx.fragment.app.FragmentContainerView
                 android:id="@+id/fcv_category"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginHorizontal="8dp"
+                android:paddingHorizontal="8dp"
+                android:clipToPadding="false"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/tv_search"
                 tools:layout="@layout/fragment_home_category" />
@@ -88,7 +87,7 @@
             <View
                 android:layout_width="match_parent"
                 android:layout_height="500dp"
-                app:layout_constraintTop_toBottomOf="@id/fcv_recent_contents"/>
+                app:layout_constraintTop_toBottomOf="@id/fcv_recent_contents" />
         </androidx.constraintlayout.widget.ConstraintLayout>
 
     </com.example.havit.ui.home.NewScrollView>

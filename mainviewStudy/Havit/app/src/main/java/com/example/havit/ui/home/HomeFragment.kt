@@ -31,10 +31,20 @@ class HomeFragment : Fragment() {
         _binding = FragmentHomeBinding.inflate(inflater, container, false)
 
         initSearchScroll()
+        initProgressBar()
         initHomeCategoryFragment()
         initHomeContentsFragment()
 
         return binding.root
+    }
+
+    private fun initProgressBar() {
+        val t : Int = 62
+        val a : Double = t.toDouble()
+        val b : Double = 145.toDouble()
+        val rate : Int = ((a / b) * 100).toInt()
+        Log.d("HomeFragment", "rate : $rate")
+        binding.pbReach.progress = rate
     }
 
     private fun initHomeContentsFragment() {
