@@ -9,6 +9,7 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.PagerSnapHelper
 import androidx.recyclerview.widget.RecyclerView
 import com.example.havit.R
 import com.example.havit.databinding.FragmentHomeCategoryBinding
@@ -51,8 +52,8 @@ class HomeCategoryFragment : Fragment() {
         binding.rvCategory.layoutManager =
             GridLayoutManager(context, 3, RecyclerView.HORIZONTAL, false)
 
-//        val gridLayoutSnapHelper = GridLayoutSnapHelper(6)
-//        gridLayoutSnapHelper.attachToRecyclerView(binding.rvCategory)
+        val gridLayoutSnapHelper = PagerSnapHelper()
+        gridLayoutSnapHelper.attachToRecyclerView(binding.rvCategory)
 
         val onScrollListener = object : RecyclerView.OnScrollListener() {
             override fun onScrollStateChanged(recyclerView: RecyclerView, newState: Int) {
