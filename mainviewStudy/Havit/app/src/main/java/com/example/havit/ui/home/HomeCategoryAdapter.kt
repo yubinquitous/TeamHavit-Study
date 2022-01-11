@@ -30,7 +30,7 @@ class HomeCategoryAdapter : RecyclerView.Adapter<HomeCategoryAdapter.HomeCategor
     ) {
         holder.onBind(categoryList[position])
 
-        if (position == 0)
+        if (categoryList[position].title == "전체")
             holder.itemView.background = callbackChangeBackground
     }
 

@@ -43,37 +43,38 @@ class HomeCategoryFragment : Fragment() {
     private fun initVpAdapter() {
         val background = requireContext().getDrawable(R.drawable.aos_main_card_category_all_img)
         categoryAdapter = HomeCategoryViewPagerAdapter()
-        categoryAdapter.setCallbackChangeItemBackground(background)
 
         binding.vpCategory.adapter = categoryAdapter
         categoryAdapter.categoryList.addAll(
             listOf(
-                HomeCategoryData("UX/UI 아티클1", 28),
+                HomeCategoryData("전체", 28),
                 HomeCategoryData("UX/UI 아티클2", 28),
                 HomeCategoryData("UX/UI 아티클3", 28),
                 HomeCategoryData("UX/UI 아티클4", 28),
                 HomeCategoryData("UX/UI 아티클5", 28),
                 HomeCategoryData("UX/UI 아티클6", 28),
-                HomeCategoryData("UX/UI 아티클7", 28),
-                HomeCategoryData("UX/UI 아티클8", 28),
-                HomeCategoryData("UX/UI 아티클9", 28),
-                HomeCategoryData("UX/UI 아티클10", 28),
-                HomeCategoryData("UX/UI 아티클11", 28),
-                HomeCategoryData("UX/UI 아티클12", 28),
-                HomeCategoryData("UX/UI 아티클13", 28),
-                HomeCategoryData("UX/UI 아티클14", 28),
-                HomeCategoryData("UX/UI 아티클15", 28),
-                HomeCategoryData("UX/UI 아티클16", 28),
-                HomeCategoryData("UX/UI 아티클17", 28),
+                HomeCategoryData("UX/UI 아티클7", 28)
+//                HomeCategoryData("UX/UI 아티클8", 28),
+//                HomeCategoryData("UX/UI 아티클9", 28),
+//                HomeCategoryData("UX/UI 아티클10", 28),
+//                HomeCategoryData("UX/UI 아티클11", 28),
+//                HomeCategoryData("UX/UI 아티클12", 28),
+//                HomeCategoryData("UX/UI 아티클13", 28),
+//                HomeCategoryData("UX/UI 아티클14", 28),
+//                HomeCategoryData("UX/UI 아티클15", 28),
+//                HomeCategoryData("UX/UI 아티클16", 28),
+//                HomeCategoryData("UX/UI 아티클17", 28),
 
                 )
         )
+        categoryAdapter.setCallbackChangeItemBackground(background)
         categoryAdapter.notifyDataSetChanged()
     }
 
 
     private fun initIndicator() {
-
+        val wormDotsIndicator = binding.wormDotsIndicator
+        wormDotsIndicator.setViewPager2(binding.vpCategory)
     }
 
 //    private fun initRvAdapter() {

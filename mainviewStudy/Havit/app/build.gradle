@@ -94,4 +94,7 @@ dependencies {
     implementation 'com.hhl:gridpagersnaphelper:1.0.0'
     implementation 'com.hhl:recyclerviewindicator:1.0.0'
 
+
+    // DotsIndicator
+    implementation 'com.tbuonomo:dotsindicator:4.2'
 }
