@@ -13,6 +13,10 @@ import androidx.recyclerview.widget.PagerSnapHelper
 import androidx.recyclerview.widget.RecyclerView
 import com.example.havit.R
 import com.example.havit.databinding.FragmentHomeCategoryBinding
+import com.hhl.gridpagersnaphelper.GridPagerSnapHelper
+import com.hhl.recyclerviewindicator.CirclePageIndicator
+import com.hhl.recyclerviewindicator.LinePageIndicator
+import com.kingfisher.easyviewindicator.GridLayoutSnapHelper
 import kotlin.math.ceil
 
 class HomeCategoryFragment : Fragment() {
@@ -32,7 +36,7 @@ class HomeCategoryFragment : Fragment() {
 
         initVpAdapter()
 //        initRvAdapter()
-//        initIndicator()
+        initIndicator()
         return binding.root
     }
 
@@ -66,33 +70,12 @@ class HomeCategoryFragment : Fragment() {
         )
         categoryAdapter.notifyDataSetChanged()
     }
-//    private fun initIndicator() {
-//        val gridIndicator = binding.anyViewIndicator2
-//
-//        gridIndicator.setItemCount(categoryAdapter.itemCount / 6 + 1)   // 전체 카테고리 수 / 6 + 1
-//        gridIndicator.setCurrentPosition(0)
-//
-//        binding.rvCategory.layoutManager =
-//            GridLayoutManager(context, 3, RecyclerView.HORIZONTAL, false)
-//
-//        val gridLayoutSnapHelper = PagerSnapHelper()
-//        gridLayoutSnapHelper.attachToRecyclerView(binding.rvCategory)
-//
-//        val onScrollListener = object : RecyclerView.OnScrollListener() {
-//            override fun onScrollStateChanged(recyclerView: RecyclerView, newState: Int) {
-//                super.onScrollStateChanged(recyclerView, newState)
-//                when (newState) {
-//                    RecyclerView.SCROLL_STATE_IDLE -> {
-//                        val position =
-//                            (recyclerView.layoutManager as LinearLayoutManager).findLastVisibleItemPosition()
-//                        gridIndicator.setCurrentPosition(ceil((position / 6).toDouble()).toInt())
-//                    }
-//                }
-//            }
-//        }
-//        binding.rvCategory.addOnScrollListener(onScrollListener)
-//    }
-//
+
+
+    private fun initIndicator() {
+
+    }
+
 //    private fun initRvAdapter() {
 //        val background = requireContext().getDrawable(R.drawable.aos_main_card_category_all_img)
 //        categoryAdapter = HomeCategoryAdapter()
@@ -123,9 +106,9 @@ class HomeCategoryFragment : Fragment() {
 //        )
 //        categoryAdapter.notifyDataSetChanged()
 //    }
-//
-//    override fun onDestroyView() {
-//        super.onDestroyView()
-//        _binding = null
-//    }
+
+    override fun onDestroyView() {
+        super.onDestroyView()
+        _binding = null
+    }
 }
