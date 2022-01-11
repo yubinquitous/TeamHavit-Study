@@ -47,25 +47,67 @@ class HomeCategoryFragment : Fragment() {
         binding.vpCategory.adapter = categoryAdapter
         categoryAdapter.categoryList.addAll(
             listOf(
-                HomeCategoryData("전체", 28),
-                HomeCategoryData("UX/UI 아티클2", 28),
-                HomeCategoryData("UX/UI 아티클3", 28),
-                HomeCategoryData("UX/UI 아티클4", 28),
-                HomeCategoryData("UX/UI 아티클5", 28),
-                HomeCategoryData("UX/UI 아티클6", 28),
-                HomeCategoryData("UX/UI 아티클7", 28)
-//                HomeCategoryData("UX/UI 아티클8", 28),
-//                HomeCategoryData("UX/UI 아티클9", 28),
-//                HomeCategoryData("UX/UI 아티클10", 28),
-//                HomeCategoryData("UX/UI 아티클11", 28),
-//                HomeCategoryData("UX/UI 아티클12", 28),
-//                HomeCategoryData("UX/UI 아티클13", 28),
-//                HomeCategoryData("UX/UI 아티클14", 28),
-//                HomeCategoryData("UX/UI 아티클15", 28),
-//                HomeCategoryData("UX/UI 아티클16", 28),
-//                HomeCategoryData("UX/UI 아티클17", 28),
-
+                HomeCategoryListData(
+                    listOf(
+                        HomeCategoryData("전체", 28),
+                        HomeCategoryData("UX/UI 아티클2", 28),
+                        HomeCategoryData("UX/UI 아티클3", 28),
+                        HomeCategoryData("UX/UI 아티클4", 28),
+                        HomeCategoryData("UX/UI 아티클5", 28),
+                        HomeCategoryData("UX/UI 아티클6", 28)
+                    )
+                ),
+                HomeCategoryListData(
+                    listOf(
+                        HomeCategoryData("전체", 28),
+                        HomeCategoryData("UX/UI 아티클2", 28),
+                        HomeCategoryData("UX/UI 아티클3", 28),
+                        HomeCategoryData("UX/UI 아티클4", 28),
+                        HomeCategoryData("UX/UI 아티클5", 28),
+                        HomeCategoryData("UX/UI 아티클6", 28)
+                    )
+                ),
+                HomeCategoryListData(
+                    listOf(
+                        HomeCategoryData("전체", 28),
+                        HomeCategoryData("UX/UI 아티클2", 28),
+                        HomeCategoryData("UX/UI 아티클3", 28),
+                        HomeCategoryData("UX/UI 아티클4", 28),
+                        HomeCategoryData("UX/UI 아티클5", 28),
+                        HomeCategoryData("UX/UI 아티클6", 28)
+                    )
+                ),
+                HomeCategoryListData(
+                    listOf(
+                        HomeCategoryData("전체", 28),
+                        HomeCategoryData("UX/UI 아티클2", 28),
+                        HomeCategoryData("UX/UI 아티클3", 28),
+                        HomeCategoryData("UX/UI 아티클4", 28),
+                        HomeCategoryData("UX/UI 아티클5", 28),
+                        HomeCategoryData("UX/UI 아티클6", 28)
+                    )
                 )
+            )
+//            listOf(
+//                HomeCategoryData("전체", 28),
+//                HomeCategoryData("UX/UI 아티클2", 28),
+//                HomeCategoryData("UX/UI 아티클3", 28),
+//                HomeCategoryData("UX/UI 아티클4", 28),
+//                HomeCategoryData("UX/UI 아티클5", 28),
+//                HomeCategoryData("UX/UI 아티클6", 28),
+//                HomeCategoryData("UX/UI 아티클7", 28)
+////                HomeCategoryData("UX/UI 아티클8", 28),
+////                HomeCategoryData("UX/UI 아티클9", 28),
+////                HomeCategoryData("UX/UI 아티클10", 28),
+////                HomeCategoryData("UX/UI 아티클11", 28),
+////                HomeCategoryData("UX/UI 아티클12", 28),
+////                HomeCategoryData("UX/UI 아티클13", 28),
+////                HomeCategoryData("UX/UI 아티클14", 28),
+////                HomeCategoryData("UX/UI 아티클15", 28),
+////                HomeCategoryData("UX/UI 아티클16", 28),
+////                HomeCategoryData("UX/UI 아티클17", 28),
+//
+//                )
         )
         categoryAdapter.setCallbackChangeItemBackground(background)
         categoryAdapter.notifyDataSetChanged()

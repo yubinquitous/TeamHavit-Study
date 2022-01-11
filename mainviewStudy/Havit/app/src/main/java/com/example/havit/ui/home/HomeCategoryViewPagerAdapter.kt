@@ -6,18 +6,23 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.havit.databinding.ItemHomeCategoryListBinding
+import com.example.havit.databinding.ItemHomeCategoryRecyclerviewBinding
 
 class HomeCategoryViewPagerAdapter:
     RecyclerView.Adapter<HomeCategoryViewPagerAdapter.HomeCategoryViewHolder>() {
 
-    val categoryList = mutableListOf<HomeCategoryData>()
+    val categoryList = mutableListOf<HomeCategoryListData>()
     private var callbackChangeBackground: Drawable? = null
 
-    class HomeCategoryViewHolder(private val binding: ItemHomeCategoryListBinding) :
+    class HomeCategoryViewHolder(private val binding: ItemHomeCategoryRecyclerviewBinding) :
         RecyclerView.ViewHolder(binding.root) {
-        fun onBind(data: HomeCategoryData) {
-            binding.tvTitle.text = data.title
-            binding.tvCount.text = data.count.toString()
+        fun onBind(data: HomeCategoryListData, position: Int) {
+            val rvCategoryAdapter = HomeCategoryAdapter()
+            binding.rvCategory.adapter = rvCategoryAdapter
+            rvCategoryAdapter.categoryList.addAll(
+                data.categoryListData
+            )
+            rvCategoryAdapter.notifyDataSetChanged()
         }
     }
 
@@ -26,7 +31,7 @@ class HomeCategoryViewPagerAdapter:
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): HomeCategoryViewHolder {
-        val binding = ItemHomeCategoryListBinding.inflate(
+        val binding = ItemHomeCategoryRecyclerviewBinding.inflate(
             LayoutInflater.from(parent.context),
             parent, false
         )
@@ -35,11 +40,13 @@ class HomeCategoryViewPagerAdapter:
     }
 
     override fun onBindViewHolder(holder: HomeCategoryViewHolder, position: Int) {
-        holder.onBind(categoryList[position])
+        holder.onBind(categoryList[position], position)
 
         if (position == 0)
             holder.itemView.background = callbackChangeBackground
-    }
+            // else
+            // background 기본으로 바꾸는 함수
+     }
 
     override fun getItemCount(): Int = categoryList.size
 }
